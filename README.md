@@ -35,6 +35,18 @@ is sent to the heater, the program then stop responding to the heater, because
 it otherwise trigs errors in the heater (which might not have any second
 heating circuit onto which a remote control could be registered).
 
+I then added a third flavor (RemoteToRflink), that is also still a work in progress, in order
+to control the heater with homeassistant through an rflink like protocol.
+Still using that same LPC1343 evaluation board to transmit via USB the statuses
+and temperatures from the heater, and be able to receive rflink like commands
+to switch things on or off. Still looking to enhance the integration to
+homeassistant, but I can so far control the global mode (on/off) of each
+heating circuit, control the eco mode too (though I still can't tell whenever
+a circuit is in eco mode), the report back all the different temperatures to homeassistant.
+Moreover, this remote can decode 433MHz OOK signals from Oregon Scientific
+sensors, and uses (either the first, or a specific id) temperature sensor
+to report the room temperature to the heater.
+
 Information for creating this program has been gathered here :
 https://github.com/openv/openv/wiki/KM-Bus
 and exchanged here
